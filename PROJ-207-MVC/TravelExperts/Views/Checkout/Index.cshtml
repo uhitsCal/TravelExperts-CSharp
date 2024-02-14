@@ -1,0 +1,67 @@
+﻿@* Written by Keegan *@
+
+@model CheckoutModel
+
+@{
+	ViewData["Title"] = "Checkout";
+}
+
+<form asp-controller="Checkout" asp-action="Index" asp-route-id="@ViewBag.package.PackageId" method="post">
+	<div class="container mt-5" style="max-width: 800px">
+		<div class="row">
+			<div class="col-md-6 mb-4">
+				<h3 class="mb-3">Booking information</h3>
+
+				<label class="form-label" asp-for="TravelerCount">Traveler Count</label>
+				<input type="text" class="form-control" asp-for="TravelerCount" />
+				<span asp-validation-for="TravelerCount" class="text-danger"></span><br />
+
+				<label class="form-label" asp-for="CardNumber">Card Number</label>
+				<input type="text" class="form-control" asp-for="CardNumber" placeholder="XXXXXXXXXXXXXXXX"/>
+				<span asp-validation-for="CardNumber" class="text-danger"></span><br />
+
+				<div class="row">
+					<div class="col-8">
+						<label class="form-label" asp-for="Expiry">Expiry Date</label>
+						<input type="text" class="form-control" asp-for="Expiry" placeholder="yy/mm" />
+						<span asp-validation-for="Expiry" class="text-danger"></span>
+					</div>
+					<div class="col">
+						<label class="form-label" asp-for="CVV">CVV</label>
+						<input type="password" class="form-control" asp-for="CVV" maxlength="3" placeholder="123" />
+						<span asp-validation-for="CVV" class="text-danger"></span>
+					</div>
+				</div>
+
+				<div class="form-check mt-3">
+					<input type="checkbox" class="form-check-input" asp-for="RememberPayment" />
+					<label class="form-check-label" asp-for="RememberPayment" value="true">Remember my payment information for next time.</label>
+					<input type="hidden" value="false" asp-for="RememberPayment" />
+				</div>
+			</div>
+
+			<div class="col-1">
+				<div class="vr h-100 d-none d-md-block mx-auto"></div>
+			</div>
+
+			<div class="col-md mb-4">
+				<h3 class="mb-3">Order summary</h3>
+
+				<p><i class="bi bi-airplane-fill"></i> @ViewBag.package.PkgName</p>
+
+				<div class="w-100 d-flex">
+					<div>Base price</div><div class="ms-auto">@ViewBag.package.PkgBasePrice.ToString("C")</div>
+				</div>
+				<div class="w-100 d-flex">
+					<div>Agency Commission</div><div class="ms-auto">@ViewBag.package.PkgAgencyCommission.ToString("C")</div>
+				</div>
+				<div class="w-100 d-flex pt-1">
+					<div><b>Total</b></div><div class="ms-auto"><b>@((ViewBag.package.PkgAgencyCommission + ViewBag.package.PkgBasePrice).ToString("C"))</b></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<button type="submit" class="btn btn-dark w-100 rounded-0"><i class="bi bi-bag-fill"></i> Checkout</button>
+			</div>
+		</div>
+	</div>
+</form>

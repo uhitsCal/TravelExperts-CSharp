@@ -1,0 +1,125 @@
+﻿@*Contributor: Calvin C*@
+@model TravelExpertsData.Customer
+@{
+    ViewData["Title"] = "Register";
+}
+<section class="">
+
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start rounded-3" style="background-color: white" >
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-3 display-3 fw-bold ls-tight">
+                        Begin the journey <br />
+                        <span class="text-primary">Register now</span>
+                    </h1>
+                    <p style="color: hsl(217, 10%, 50.8%)">
+                        Your ultimate destination for extraordinary journeys and unforgettable 
+                        adventures! Ready to embark on a seamless and enriching travel 
+                        experience. Whether you dream of sun-kissed beaches, ancient wonders, 
+                        or hidden gems off the beaten path, Join us now and unlock a world of endless possibilities.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card">
+                        <div class="card bg-dark text-white py-5 px-md-5">
+                            <form asp-action="index" method="post">
+
+                                <div class="row">
+                                    <div class="col-sm-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" asp-for="CustFirstName" placeholder="First Name" />
+                                            <span asp-validation-for="CustFirstName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" asp-for="CustLastName" placeholder="Last Name"/>
+                                            <span asp-validation-for="CustLastName"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-outline col-sm-6 mb-4">
+                                        <input type="text" class="form-control" asp-for="CustAddress" placeholder="Address" />
+                                        <span asp-validation-for="CustAddress"></span>
+                                    </div>
+                                    <div class="form-outline col-sm-6 mb-4">
+                                        <input type="text" class="form-control" asp-for="CustPostal" placeholder="PostalCode" />
+                                        <span asp-validation-for="CustPostal"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" asp-for="CustCity" placeholder="City"/>
+                                            <span asp-validation-for="CustCity"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" asp-for="CustProv" placeholder="Province"/>
+                                            <span asp-validation-for="CustProv"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" asp-for="CustCountry" placeholder="Country" />
+                                            <span asp-validation-for="CustCountry"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" asp-for="CustHomePhone" placeholder="Personal Number" />
+                                            <span asp-validation-for="CustHomePhone"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" asp-for="CustBusPhone" placeholder="Business Number" />
+                                            <span asp-validation-for="CustBusPhone"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="form-outline mb-4">
+                                    <input type="text" class="form-control" asp-for="CustEmail" placeholder="Email" />
+                                    <span asp-validation-for="CustEmail"></span>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" class="form-control" asp-for="CustUsername" placeholder="Username"/>
+                                    <span asp-validation-for="CustUsername"></span>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-outline col-sm-6 mb-4">
+                                        <input type="password" class="form-control" asp-for="CustPassword" placeholder="Password"/>
+                                        <span asp-validation-for="CustPassword"></span>
+                                    </div>
+                                    <div class="form-outline col-sm-6 mb-4">
+                                        <input type="password" class="form-control" asp-for="CustConfirmPassword" placeholder="Confirm your password" />
+                                        <span asp-validation-for="CustConfirmPassword"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col text-center justify-content-center">
+                                    <button type="submit" class="btn btn-outline-light btn-lg px-1 mb-4 col-sm-4">Sign up</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

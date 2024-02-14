@@ -1,0 +1,103 @@
+﻿@model TravelExpertsData.Customer
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="hero-banner">
+    <div class="container">
+        <div class="col-lg-4 text-here">
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success" style="float: none;" role="alert">
+                    <b>@TempData["Message"]</b>
+                </div>
+            }
+            @if (TempData["DeleteMessage"] != null)
+            {
+                <div class="alert alert-danger" style="float: none;" role="alert">
+                    <b>@TempData["DeleteMessage"]</b>
+                </div>
+            }
+
+        </div>
+        <div class="hero-content" data-sal="zoom-out" data-sal-duration="1000">
+            <div aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Update Profile</h5>
+                        </div>
+                        @using (Html.BeginForm("UpdateProfile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.HiddenFor(m => m.CustomerId)
+                            @Html.HiddenFor(m => m.AgentId)
+                            <div class="modal-body">
+                                <label>First Name</label>
+                                @Html.EditorFor(model => model.CustFirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "FirstName" } })
+                            </div>
+                            <div class="modal-body">
+                                <label>Last Name</label>
+                                @Html.EditorFor(model => model.CustLastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Last Name" } })
+                            </div>
+                           @* <div class="modal-body">
+                                <label>Username</label>
+                                @Html.EditorFor(model => model.CustUsername, new { htmlAttributes = new { @class = "form-control", placeholder = "Username" } })
+                            </div>*@
+                            <div class="modal-body">
+                                <label>Email</label>
+                                @Html.EditorFor(model => model.CustEmail, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="modal-body">
+                                <label>Password</label>
+                                @Html.EditorFor(model => model.CustPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                                @Html.ValidationMessageFor(model => model.CustPassword, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="modal-body">
+                                <label>Confirm Password</label>
+                                @Html.EditorFor(model => model.CustConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                                @Html.ValidationMessageFor(model => model.CustConfirmPassword, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="modal-body">
+                                <label>City</label>
+                                @Html.EditorFor(model => model.CustCity, new { htmlAttributes = new { @class = "form-control", placeholder = "City" } })
+                            </div>
+                            <div class="modal-body">
+                                <label>Address</label>
+                                @Html.EditorFor(model => model.CustAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Address" } })
+                            </div>
+                            <div class="modal-body">
+                                <label>Prov</label>
+                                @Html.EditorFor(model => model.CustProv, new { htmlAttributes = new { @class = "form-control", placeholder = "Province" } })
+                            </div>
+                            <div class="modal-body">
+                                <label>Postal</label>
+                                @Html.EditorFor(model => model.CustPostal, new { htmlAttributes = new { @class = "form-control", placeholder = "Postal" } })
+                            </div>
+
+                            <div class="modal-body">
+                                <label>Country</label>
+                                @Html.EditorFor(model => model.CustCountry, new { htmlAttributes = new { @class = "form-control", placeholder = "Country" } })
+                            </div>
+                            <div class="modal-body">
+                                <label>Home Phone</label>
+                                @Html.EditorFor(model => model.CustHomePhone, new { htmlAttributes = new { @class = "form-control", placeholder = "Phone" } })
+                            </div>
+                            <div class="modal-body">
+                                <label>Bus Phone</label>
+                                @Html.EditorFor(model => model.CustBusPhone, new { htmlAttributes = new { @class = "form-control", placeholder = "Business Phone" } })
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>

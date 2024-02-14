@@ -1,0 +1,27 @@
+﻿@* Written by Keegan *@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="position: fixed; top: 0; left: 0; width: 100vw; height: calc(100vh - 50px);">
+    <div class="row container-fluid m-0">
+		<div class="col-md-7">
+			 <div class="container-fluid d-flex align-content-center justify-content-center">
+				 <div class="w-auto h-auto text-center m-auto">
+					 <p class="display-3">Welcome to <b>Travel Experts</b></p>
+					 <p class="lead">
+						 Head on over to <a class="text-dark hover-light text-decoration-none" asp-controller="Packages"><b>Packages</b></a> and see what we can offer you.
+					 </p>
+				 </div>
+			 </div>
+		</div>
+
+		@*Hides right image + plane on smaller screens.*@
+		<div class="col-md position-relative d-none d-md-block"
+			 style="background-image: url(images/sky.jpg);
+					background-size: cover;">
+			<img class="position-absolute" src="~/images/plane.png" style="left: -200px; top: 75px; z-index: 100" />
+		</div>
+    </div>
+</div>

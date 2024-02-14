@@ -1,0 +1,108 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+span {
+    color: orangered;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+
+.container-fluid {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  height: 100%; 
+}
+
+.bg-image {
+  background-image: url('../images/login/beachphoto.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%; 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -6;
+}
+.bg-image2 {
+    background-image: url('../images/register/banffphoto.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -6;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+.overlay2 {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 30px;
+  margin-top: 20px;
+  height: 100%; 
+}
+
+.navbar {
+    z-index: 3;
+    padding: 5px;
+}
+.footer {
+    z-index: 3;
+    background-color: white;
+}
+
+.text-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
